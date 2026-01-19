@@ -91,6 +91,13 @@
             key-positions = <25 28>;
             bindings = <&kp TAB>;
         };
+/* TAP DANCE: Nhấn 1 lần ra dấu CHẤM, nhấn 2 lần ra dấu HAI CHẤM */
+        td_dot: tap_dance_dot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;    /* Thời gian chờ gõ lần 2 (200ms) */
+            bindings = <&kp DOT>, <&kp COLON>;
+        };
     };
 
     keymap {
@@ -106,7 +113,7 @@
             bindings = <
 &kp TAB    &kp Q      &kp W      &kp E      &kp R          &kp T           &kp Y       &kp U          &kp I      &kp O      &kp P    &kp BSPC
 &kp LCTRL  &kp A      &kp S      &kp D      &kp F          &kp G           &kp H       &kp J          &kp K      &kp L      &lt_media MDIA SQT   &kp RET
-&kp LSHFT  &kp Z      &kp X      &kp C      &kp V          &kp B           &kp N       &kp M          &kp COMMA  &kp DOT    &kp FSLH   &kp ESC
+&kp LSHFT  &kp Z      &kp X      &kp C      &kp V          &kp B           &kp N       &kp M          &kp COMMA  &td_dot    &kp FSLH   &kp ESC
                                  &mo FUN    &lt NAV SPACE  &mo NUM         &skq LSHFT  &mo NAV        &mo SYMB
             >;
         };
