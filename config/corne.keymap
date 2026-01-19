@@ -196,14 +196,14 @@
         /* LAYER 6: NAV LEFT (Mũi tên tay trái) */
         navl_layer {
             // -----------------------------------------------------------------------------------------
-            // | TO_0 | HOME|  UP | END | PGUP|TRANS|   |TRANS|TRANS|TRANS|TRANS|TRANS| TO_0 |
+            // | TO_0 | HOME|  UP | END | PGUP|TRANS|   |BT1 | BT2 | BT3 | BT4 | BT5| TO_0 |
             // | SPC  | LFT | DWN | RGT | PGDN|TRANS|   |TRANS| SHFT| CTRL| ALT | GUI | TRANS|
-            // | DEL  | TAB | RET | BKSP| ESC |TRANS|   |TRANS|TRANS|TRANS|TRANS|TRANS| TRANS|
+            // | DEL  | TAB | RET | BKSP| ESC |TRANS|   |TRANS|TRANS|TRANS|TRANS|TRANS| BT_CLR|
             //                    | TO_0 | TO_0|TRANS|   | RET | BKSP|TRANS|
             bindings = <
-&to BASE   &kp HOME   &kp UP     &kp END    &kp PG_UP      &trans          &trans      &trans         &trans     &trans     &trans     &to BASE
+&to BASE   &kp HOME   &kp UP     &kp END    &kp PG_UP      &trans          &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &to BASE
 &kp SPACE  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &trans          &trans      &sk LSHFT      &sk LCTRL  &sk LALT   &sk LGUI   &trans
-&kp DEL    &kp TAB    &kp RET    &kp BSPC   &kp ESC        &trans          &trans      &trans         &trans     &trans     &trans     &trans
+&kp DEL    &kp TAB    &kp RET    &kp BSPC   &kp ESC        &trans          &trans      &trans         &trans     &trans     &trans     &bt BT_CLR
                                  &to BASE   &to BASE       &trans          &kp RET     &kp BSPC       &trans
             >;
         };
