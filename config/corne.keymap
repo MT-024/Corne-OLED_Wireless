@@ -51,6 +51,13 @@
             quick-tap-ms = <125>;
             bindings = <&mo>, <&kp>;
         };
+/* TAP DANCE: Nhấn 1 lần ra dấu CHẤM, nhấn 2 lần ra dấu HAI CHẤM */
+        td_dot: tap_dance_dot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;    /* Thời gian chờ gõ lần 2 (200ms) */
+            bindings = <&kp DOT>, <&kp COLON>;
+        };
     };
 
     /* COMBOS */
@@ -90,13 +97,6 @@
             timeout-ms = <50>;
             key-positions = <25 28>;
             bindings = <&kp TAB>;
-        };
-/* TAP DANCE: Nhấn 1 lần ra dấu CHẤM, nhấn 2 lần ra dấu HAI CHẤM */
-        td_dot: tap_dance_dot {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;    /* Thời gian chờ gõ lần 2 (200ms) */
-            bindings = <&kp DOT>, <&kp COLON>;
         };
     };
 
