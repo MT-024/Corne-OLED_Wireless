@@ -50,83 +50,62 @@ Combos cho phép bạn nhấn cùng lúc 2-3 phím để tạo ra một phím kh
 | `,` + `.` | `;` (Chấm phẩy) | Gõ nhanh dấu `;` để kết thúc câu lệnh khi lập trình. |
 | `H` + `,` | `-` (Gạch ngang) | Gõ nhanh dấu gạch ngang/dấu trừ. |
 
-default_layer {
-            bindings = <
-&kp TAB    &kp Q      &kp W      &kp F      &kp P          &kp B           &kp J       &kp L          &kp U      &kp Y      &kp SQT          &kp BSPC
-&kp LCTRL  &kp A      &kp R      &kp S      &kp T          &kp G           &kp M       &kp N          &kp E      &kp I      &lt_media MDIA O &kp RET
-&kp LSHFT  &kp Z      &kp X      &kp C      &kp D          &kp V           &kp K       &kp H          &kp COMMA  &td_dot    &kp FSLH         &kp ESC
-                                 &mo FUN    &lt NAV SPACE  &mo NUM         &skq LSHFT  &mo NAV        &mo SYMB
-            >;
-        };
+### 0. BASE (Layer Mặc định - Colemak-DH)
+Lớp gõ phím cơ bản. Phím `O` và `SPACE` được lồng tính năng giữ để chuyển layer (Hold-Tap).
+```text
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  | BKSP |
+// | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |O/MDA| RET  |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  | ESC  |
+//                    | FUN |NV/SP| NUM |   | SHFT| NAV | SYM |
 
         /* LAYER 1: SYMBOLS */
-        sym_layer {
-            bindings = <
-&trans     &kp MINUS  &kp UNDER  &kp EQUAL  &kp PLUS       &kp BSLH        &kp LC(Z)   &kp LS(N7)     &kp LS(N8) &kp DOT    &kp LC(V)  &trans
-&trans     &kp SQT    &kp DQT    &kp LPAR   &kp RPAR       &kp GRAVE       &kp COLON   &skq LSHFT     &skq LCTRL &skq LALT  &skq LGUI  &trans
-&trans     &kp SEMI   &kp COLON  &kp LBKT   &kp RBKT       &kp TILDE       &kp MINUS   &kp EXCL       &kp LT     &kp GT     &kp QMARK  &trans
-                                 &trans     &trans         &kp RET         &trans      &trans         &trans
-            >;
-        };
-
+// -----------------------------------------------------------------------------------------
+// | TRNS |  -  |  _  |  =  |  +  |  \  |   | C_Z |  &  |  * |  .  | C_V | TRNS |
+// | TRNS |  '  |  "  |  (  |  )  |  `  |   |  :  | SHFT| CTRL| ALT | GUI | TRNS |
+// | TRNS |  ;  |  :  |  [  |  ]  |  ~  |   |  -  |  !  |  <  |  >  |  ?  | TRNS |
+//                    | TRNS| TRNS| RET |   | TRNS| TRNS| TRNS|
         /* LAYER 2: NUM (Numpad bên phải) */
         num_layer {
-            bindings = <
-&kp ESC    &kp LEFT   &kp DOT    &kp RIGHT  &kp UNDER      &trans          &trans      &kp N7         &kp N8     &kp N9     &kp PLUS   &trans
-&skq LGUI  &skq LALT  &skq LCTRL &skq LSHFT &mo NAV        &trans          &kp COLON   &kp N4         &kp N5     &kp N6     &kp MINUS  &trans
-&kp LC(Z)  &trans     &kp COMMA  &kp COLON  &kp LC(Y)      &trans          &kp MINUS   &kp N1         &kp N2     &kp N3     &trans     &trans
-                                 &trans     &trans         &trans          &kp RET     &kp BSPC       &kp N0
-            >;
-        };
-
+// -----------------------------------------------------------------------------------------
+// |  TAB | LFT |  .  | RGT |  _  | TRNS|   | TRNS|  7  |  8  |  9  |  +  | TRNS |
+// | GUI  | ALT | CTRL| SHFT| NAV | TRNS|   |  :  |  4  |  5  |  6  |  -  | TRNS |
+// | C_Z  | TRNS|  ,  |  :  | C_Y | TRNS|   |  -  |  1  |  2  |  3  | TRNS| TRNS |
+//                    | TRNS| TRNS| TRNS|   | RET | BKSP|  0  |
         /* LAYER 3: FUN (F-Keys) */
-        fun_layer {
-            bindings = <
-&trans     &kp N1     &kp N2     &kp N3     &kp N4         &kp N5          &to NAVL    &kp F7         &kp F8     &kp F9     &kp F12    &trans
-&trans     &skq LGUI  &skq LALT  &skq LCTRL &skq LSHFT     &trans          &trans      &kp F4         &kp F5     &kp F6     &kp F11    &trans
-&trans     &kp N6     &kp N7     &kp N8     &kp N9         &kp N0          &trans      &kp F1         &kp F2     &kp F3     &kp F10    &trans
-                                 &trans     &trans         &trans          &trans      &kp CAPS       &trans
-            >;
-        };
+// -----------------------------------------------------------------------------------------
+// | TRNS |  1  |  2  |  3  |  4  |  5  |   | NAVL| F7  | F8  | F9  | F12 | TRNS |
+// | TRNS | GUI | ALT | CTRL| SHFT| TRNS|   | TRNS| F4  | F5  | F6  | F11 | TRNS |
+// | TRNS |  6  |  7  |  8  |  9  |  0  |   | TRNS| F1  | F2  | F3  | F10 | TRNS |
+//                    | TRNS| TRNS| TRNS|   | TRNS| CAPS| TRNS|
 
         /* LAYER 4: NAV (Điều hướng & Thao tác) */
-        nav_layer {
-            bindings = <
-&alt_tab   &kp LS(TAB) &kp LC(W)  &kp LC(TAB) &alt_tab     &trans          &kp PG_UP   &kp HOME       &kp UP     &kp END    &kp LC(BSPC) &trans
-&skq LGUI  &skq LALT   &skq LCTRL &skq LSHFT  &mo NWIN     &trans          &kp PG_DN   &kp LEFT       &kp DOWN   &kp RIGHT  &kp SPACE  &trans
-&kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)   &kp LC(Y)    &trans          &kp ESC     &kp BSPC       &kp RET    &kp TAB    &kp DEL    &trans
-                                  &trans      &trans       &trans          &kp RET     &kp BSPC       &trans
-            >;
-        };
+// -----------------------------------------------------------------------------------------
+// | ALTB | S_TB| C_W | C_TB| ALTB| TRNS|   | PGUP| HOME|  UP | END |C_BSP| TRNS |
+// | GUI  | ALT | CTRL| SHFT| NWIN| TRNS|   | PGDN| LFT | DWN | RGT | SPC | TRNS |
+// | C_Z  | C_X | C_C | C_V | C_Y | TRNS|   | ESC | BKSP| RET | TAB | DEL | TRNS |
+//                    | TRNS| TRNS| TRNS|   | RET | BKSP| TRNS|
 
         /* LAYER 5: NAV WIN (Alt + Phím) */
-        navwin_layer {
-            bindings = <
-&trans     &kp LA(Q)  &kp LA(W)  &kp LA(F)  &kp LA(P)      &kp LA(B)       &kp LA(J)   &kp LA(N7)     &kp LA(N8) &kp LA(N9) &kp LA(SQT)  &trans
-&trans     &skq LGUI  &skq LALT  &skq LCTRL &skq LSHFT     &trans          &kp LA(M)   &kp LA(N4)     &kp LA(N5) &kp LA(N6) &kp LA(O)    &trans
-&trans     &kp LA(Z)  &kp LA(X)  &kp LA(C)  &kp LA(D)      &kp LA(V)       &kp LA(K)   &kp LA(N1)     &kp LA(N2) &kp LA(N3) &kp LA(FSLH) &trans
-                                 &trans     &trans         &trans          &trans      &trans         &trans
-            >;
-        };
+// -----------------------------------------------------------------------------------------
+// | TRNS | A_Q | A_W | A_F | A_P | A_B |   | A_J | A_7 | A_8 | A_9 | A_' | TRNS |
+// | TRNS | GUI | ALT | CTRL| SHFT| TRNS|   | A_M | A_4 | A_5 | A_6 | A_O | TRNS |
+// | TRNS | A_Z | A_X | A_C | A_D | A_V |   | A_K | A_1 | A_2 | A_3 | A_/ | TRNS |
+//                    | TRNS| TRNS| TRNS|   | TRNS| TRNS| TRNS|
 
         /* LAYER 6: NAV LEFT (Mũi tên tay trái) */
-        navl_layer {
-            bindings = <
-&to BASE   &kp HOME   &kp UP     &kp END    &kp PG_UP      &trans          &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &to BASE
-&kp SPACE  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &trans          &trans       &skq LSHFT    &skq LCTRL   &skq LALT    &skq LGUI    &trans
-&kp DEL    &kp TAB    &kp RET    &kp BSPC   &kp ESC        &trans          &trans       &trans        &trans       &trans       &trans       &bt BT_CLR
-                                 &to BASE   &to BASE       &trans          &kp RET      &kp BSPC      &trans
-            >;
-        };
+// -----------------------------------------------------------------------------------------
+// | BASE | HOME|  UP | END | PGUP| TRNS|   | BT0 | BT1 | BT2 | BT3 | BT4 | BASE |
+// | SPC  | LFT | DWN | RGT | PGDN| TRNS|   | TRNS| SHFT| CTRL| ALT | GUI | TRNS |
+// | DEL  | TAB | RET | BKSP| ESC | TRNS|   | TRNS| TRNS| TRNS| TRNS| TRNS|BTCLR |
+//                    | BASE| BASE| TRNS|   | RET | BKSP| TRNS|
 
         /* LAYER 7: MEDIA & MOUSE */
-        media_layer {
-            bindings = <
-&sys_reset &trans     &trans     &trans     &trans         &trans          &msc SCRL_UP   &kp C_PREV  &mmv MOVE_UP   &kp C_NEXT &kp PSCRN &trans
-&skq LGUI  &skq LALT  &skq LCTRL &skq LSHFT &trans         &trans          &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans &trans
-&trans     &trans     &trans     &trans     &trans         &trans          &kp C_MUTE     &kp C_VOL_DN   &kp C_PP       &kp C_VOL_UP    &trans &trans
-                                 &trans     &trans         &trans          &mkp MB3       &mkp MB1       &mkp MB2
-            >;
+// -----------------------------------------------------------------------------------------
+// | RESET| TRNS| TRNS| TRNS| TRNS| TRNS|   | S_UP| PREV| M_UP| NEXT| PSCR| TRNS |
+// | GUI  | ALT | CTRL| SHFT| TRNS| TRNS|   | S_DN| M_LF| M_DN| M_RT| TRNS| TRNS |
+// | TRNS | TRNS| TRNS| TRNS| TRNS| TRNS|   | MUTE| V_DN| PP  | V_UP| TRNS| TRNS |
+//                    | TRNS| TRNS| TRNS|   | MB3 | MB1 | MB2 |
         };
     };
 };****
